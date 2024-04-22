@@ -1,7 +1,7 @@
 .wrapper{
     display: flex;
     width: 100%;
-    margin: 30px 0;
+    margin: 10px 0;
     flex-wrap: wrap;
     font-family: "Noto Sans JP", sans-serif;
     font-weight: 600;
@@ -19,26 +19,30 @@
 .info{
     display: flex;
     width: auto;
-    gap: 100px;   
+    gap: 50px;   
      @media screen and (max-width: 956px) {
         gap: 0;
     }
 }
 .logo{
+    cursor: pointer;
     display: flex;
     font-family: "Readex Pro";
     font-size: 32px;
 }
 
-.headerItems{
+.headerItems {
     flex-wrap: wrap;
     display: flex;
-    gap: 40px;
+    gap: 20px;
+    width: 100%; 
 }
 
-.items{
+.items {
     display: flex;
     align-items: center;
+    width: auto; 
+    flex: 0 0 auto;
     @media screen and (max-width: 956px) {
         display: none;
         opacity: 0;
@@ -64,6 +68,13 @@
 
 }
 
+.customTextField {
+    input {
+      color: #838383;
+      width: auto;
+      height: auto;
+    }
+}
 .search, .account{
     cursor: pointer;
     display: flex;
@@ -76,6 +87,7 @@
 }
 
 .sub{
+    cursor: pointer;
     justify-content: center;
     display: flex;
     align-items: center;
@@ -87,7 +99,7 @@
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4260ff",endColorstr="#051d9b",GradientType=1);
     padding: 0 6px;
     border-radius: 5px;
-    height: 25px;
+    height: 35px;
     @media screen and (max-width: 1120px) {
         display: none;
         opacity: 0;
@@ -97,9 +109,10 @@
 .mobileMenu{
     height: 50px;
     display: flex;
-    flex-direction: row; /* Change from column-reverse to row */
-    align-items: center; /* Align items vertically center */
-    justify-content: flex-end; /* Align items horizontally to the end */
+    flex-direction: row; 
+    align-items: center; 
+    justify-content: flex-end;
+     
 }
 
 
@@ -141,5 +154,5 @@
     bottom: 0;
     width: 30px;
     background-color: white;
-    height: 2px;
+    height: 1px;
 }
