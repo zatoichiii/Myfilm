@@ -1,0 +1,145 @@
+.wrapper{
+    display: flex;
+    width: 100%;
+    margin: 30px 0;
+    flex-wrap: wrap;
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: 600;
+}
+
+.inner{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.info{
+    display: flex;
+    width: auto;
+    gap: 100px;   
+     @media screen and (max-width: 956px) {
+        gap: 0;
+    }
+}
+.logo{
+    display: flex;
+    font-family: "Readex Pro";
+    font-size: 32px;
+}
+
+.headerItems{
+    flex-wrap: wrap;
+    display: flex;
+    gap: 40px;
+}
+
+.items{
+    display: flex;
+    align-items: center;
+    @media screen and (max-width: 956px) {
+        display: none;
+        opacity: 0;
+    }
+}
+
+.items a{
+    display: flex;
+    width: auto;
+    height: auto;
+    text-decoration: none;
+    color: rgb(110, 110, 110);
+    transition: 0.3s;
+    &:hover{
+        color: white;
+    }
+}
+
+.headerButtons{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+
+}
+
+.search, .account{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: rgb(110, 110, 110);
+    transition: 0.3s;
+    &:hover{
+        color: white;
+    }
+}
+
+.sub{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    background: rgb(66,96,255);
+    background: -moz-linear-gradient(90deg, rgba(66,96,255,1) 19%, rgba(38,65,208,1) 33%, rgba(5,29,155,1) 72%);
+    background: -webkit-linear-gradient(90deg, rgba(66,96,255,1) 19%, rgba(38,65,208,1) 33%, rgba(5,29,155,1) 72%);
+    background: linear-gradient(90deg, rgba(66,96,255,1) 19%, rgba(38,65,208,1) 33%, rgba(5,29,155,1) 72%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4260ff",endColorstr="#051d9b",GradientType=1);
+    padding: 0 6px;
+    border-radius: 5px;
+    height: 25px;
+    @media screen and (max-width: 1120px) {
+        display: none;
+        opacity: 0;
+    }
+}
+
+.mobileMenu{
+    height: 50px;
+    display: flex;
+    flex-direction: row; /* Change from column-reverse to row */
+    align-items: center; /* Align items vertically center */
+    justify-content: flex-end; /* Align items horizontally to the end */
+}
+
+
+.burgerButton{
+    display: none;
+    cursor: pointer;
+    width: 30px;
+    height: 15px;
+    margin-left: 20px;
+    position: relative;
+    background-color: rgb(0, 0, 0);
+    @media screen and (max-width: 956px) {
+        display: flex;
+        }
+}
+
+
+.burgerButton::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 30px;
+    background-color: white;
+    height: 1.5px;
+}
+
+.burgerButton span{
+    content: '';
+    position: absolute;
+    top: 7px;
+    width: 30px;
+    background-color: white;
+    height: 1.5px; 
+}
+
+.burgerButton::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 30px;
+    background-color: white;
+    height: 2px;
+}
