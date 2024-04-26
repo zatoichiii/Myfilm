@@ -2,6 +2,7 @@
     display: flex;
     width: 100%;
     margin: 10px 0;
+    position: relative;
     flex-wrap: wrap;
     font-family: "Noto Sans JP", sans-serif;
     font-weight: 600;
@@ -10,7 +11,30 @@
 
 .tittle{
     font-size: 32px;
+    display: flex;
 }
+
+.buttons{
+  display: flex;
+  position: relative;
+  width: 100%;
+  margin-top: 20px; 
+  gap: 10px;
+}
+.button{
+  border-radius: 10px;
+  width: auto;
+  cursor: pointer;
+  padding: 8px 15px;
+  background-color: #141414;
+  transition: 0.3s;
+  &:hover{
+    background-color: #202020;
+
+  }
+}
+
+
 .swiper{
   width: 100%;
 }

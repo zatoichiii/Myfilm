@@ -1,5 +1,5 @@
-import React from 'react';
-import styles from './NewFilms.module.scss';
+import React, { useState } from 'react';
+import styles from './RecFilms.module.scss';
 import Container from "../../UI/Container";
 
 // import Swiper core and required modules
@@ -12,12 +12,92 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+const RecFilms = () => {
+  const [showMenu, setShowMenu] = useState({
+    genres: false,
+    countries: false,
+    years: false,
+    new: false
+  });
 
-const NewFilms = () => {
+  const toggleMenu = (menu) => {
+    setShowMenu(prevState => ({
+      genres: menu === "genres" ? !prevState.genres : false,
+      countries: menu === "countries" ? !prevState.countries : false,
+      years: menu === "years" ? !prevState.years : false,
+      new: menu === "new" ? !prevState.new : false
+    }));
+  };
+
+  const MenuButton = ({ category }) => (
+    <div className={styles.button} onClick={() => toggleMenu(category)}>
+      {category.charAt(0).toUpperCase() + category.slice(1)}
+    </div>
+  );
+
+  const renderMenu = (category) => {
+    if (showMenu[category]) {
+      return (
+        <div className={`${styles.menu} ${styles[category]}`}>
+          {category === "genres" && (
+            <div>
+              <label>
+                <input type="checkbox" value="экшн" /> Экшн
+              </label>
+              <label>
+                <input type="checkbox" value="детектив" /> Детектив
+              </label>
+            </div>
+          )}
+          {category === "countries" && (
+           <div>
+           <label>
+             <input type="checkbox" value="экшн" /> Россия
+           </label>
+           <label>
+             <input type="checkbox" value="детектив" /> Омерика
+           </label>
+         </div>
+          )}
+          {category === "years" && (
+            <div>
+            <label>
+              <input type="checkbox" value="экшн" /> 2007
+            </label>
+            <label>
+              <input type="checkbox" value="детектив" /> 2010
+            </label>
+            {/* Добавь другие жанры */}
+          </div>
+          )}
+          {category === "new" && (
+            <div>
+              {/* Список новых фильмов */}
+            </div>
+          )}
+        </div>
+      );
+    }
+    return null;
+  };
+
+  
+
   return (
     <Container>
-        <div className={styles.wrapper}>
-            <div className={styles.tittle}>Новое</div>
+      <div className={styles.wrapper}>
+        <div className={styles.tittle}>Рекомендации</div>
+        <div className={styles.buttons}>
+          <MenuButton category="genres" />
+          <MenuButton category="countries" />
+          <MenuButton category="years" />
+          <MenuButton category="new" />
+        </div>
+        {renderMenu("genres")}
+        {renderMenu("countries")}
+        {renderMenu("years")}
+        {renderMenu("new")}
+            
             <Swiper 
       className={styles.swiper}
       modules={[Navigation, Pagination, Scrollbar, A11y]}
@@ -91,4 +171,4 @@ const NewFilms = () => {
   );
 };
 
-export default NewFilms;
+export default RecFilms;
